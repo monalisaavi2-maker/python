@@ -46,10 +46,10 @@ def get_cret():
 def get_login():  
     return log()
 
-# 3. Start the server locally OR initialize the serverless handler for Vercel
+# 3. Global Serverless Handler (MUST BE AT TOP LEVEL FOR VERCEL)
+from mangum import Mangum
+handler = Mangum(app)
+
+# 4. Start the server ONLY when running locally
 if __name__ == "__main__":
     serve()
-else:
-    # This exposes the ASGI entry point for Vercel Serverless environment execution
-    from mangum import Mangum
-    handler = Mangum(app)
