@@ -25,8 +25,9 @@ def home():
     return Titled(
         "Welcome to Avilash Login Page",
         P("This is the homepage of the Avilash Login Page. You can navigate to the Create Account page or the Login page using the links below."),
-        A("Go to Create Account", href="/cret"),
-        A("Go to Login", href="/login")
+        A("Go to Create Account", href="/cret", style="text-align: center;"),
+        Br(),
+        A("Go to Login", href="/login",style="text-align: center;")
     )
 # 2. Define the main homepage route
 @rt("/")
@@ -40,7 +41,7 @@ def get_cret():  # Changed name to get_cret
 
 @rt("/login")
 def get_login():  # Changed name to get_login
-    return log
+    return log()
 
 # 4. Start the server ONLY when running locally
 if __name__ == "__main__":
