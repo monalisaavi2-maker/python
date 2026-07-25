@@ -44,5 +44,10 @@ def get_login():  # Changed name to get_login
     return log()
 
 # 4. Start the server ONLY when running locally
+# 4. Start the server ONLY when running locally
 if __name__ == "__main__":
     serve()
+else:
+    # This block allows Vercel to handle the FastHTML app pathways natively
+    from mangum import Mangum
+    handler = Mangum(app)
