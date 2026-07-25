@@ -37,6 +37,7 @@ def get_login():  # Changed name to get_login
         Input(type="text", placeholder="Username"),
         Input(type="password", placeholder="Password"),
         Button("Login"),
+        Br(),  # Adds a small spacing break
         A("Go Back Home", href="/")
     )
 
