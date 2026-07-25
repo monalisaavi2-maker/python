@@ -1,7 +1,8 @@
 from fasthtml.common import *
 
 # 1. Initialize the FastHTML application
-app, rt = fast_app()
+# Rename this initialization line slightly to avoid conflict
+backend_app, rt = fast_app()
 
 def log():
     return Titled(
@@ -46,9 +47,9 @@ def get_cret():
 def get_login():  
     return log()
 
-# 3. Global Serverless Handler (MUST BE AT TOP LEVEL FOR VERCEL)
+# 3. Global Serverless Handler (NAMED "app" FOR NATIVE VERCEL RECOGNITION)
 from mangum import Mangum
-handler = Mangum(app)
+app = Mangum(backend_app)
 
 # 4. Start the server ONLY when running locally
 if __name__ == "__main__":
