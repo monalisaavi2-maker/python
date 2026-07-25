@@ -1,8 +1,7 @@
 from fasthtml.common import *
 
-# 1. Initialize the FastHTML application
-# Rename this initialization line slightly to avoid conflict
-backend_app, rt = fast_app()
+# 1. Initialize FastHTML safely without using the picolink variable
+backend_app, rt = fast_app(live=False)
 
 def log():
     return Titled(
@@ -34,7 +33,7 @@ def home():
         A("Go to Login", href="/login", style="text-align: center;")
     )
 
-# 2. Define application routes
+# 2. Define routes
 @rt("/")
 def get_home():  
     return home()
@@ -47,10 +46,10 @@ def get_cret():
 def get_login():  
     return log()
 
-# 3. Global Serverless Handler (NAMED "app" FOR NATIVE VERCEL RECOGNITION)
+# 3. Serverless Runtime Handler
 from mangum import Mangum
 app = Mangum(backend_app)
 
-# 4. Start the server ONLY when running locally
+# 4. Local Execution Block
 if __name__ == "__main__":
     serve()
