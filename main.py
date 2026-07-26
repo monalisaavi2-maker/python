@@ -1,7 +1,10 @@
 from fasthtml.common import *
 
-# Initialize FastHTML with Pico CSS enabled automatically
-app, rt = fast_app(live=False)
+# Paste your secret code from Google inside the Meta tag below!
+google_meta = Meta(name="google-site-verification", content="E7883obzavZBXk_565CwCkKx41dE0v6dv37Aipdl9lk")
+
+# Initialize FastHTML and pass the meta tag into the headers list
+app, rt = fast_app(live=False, hdrs=[google_meta])
 passs = {"Avilash":"Avilashishero",
         "AlphaCoder47": "pass123",
         "CyberFalcon19": "cool456",
