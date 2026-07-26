@@ -35,11 +35,12 @@ def centered_card_layout(title_text, *components):
         style="padding: 20px;",
         data_theme="light" # Forces a clean light theme, change to "dark" if you prefer dark mode
     )
-def frmd(s):
-    for pwd in passs.values():
-        pwd = pwd[0:len(pwd)]
-        if pwd == s: 
-            Script("alert('Login Successful!'); window.location.href = https://render.com;")
+def frmd():
+    for name,pwd in passs.items():
+        names=None
+        name+=names
+        if pwd == Input(type="password", placeholder="Minimum 8 characters", required=True,id="password").value: 
+            Script("alert(f'Login Successful You are {names}'); window.location.href = https://render.com;")
         else:
             Script("alert('Login Failed! Please check your username and password.'); window.location.href = /login;")
 # --- PAGES ---
@@ -62,7 +63,7 @@ def login_view():
         Form(
             Label("Username", Input(type="text", placeholder="Enter your username", required=True)),
             Label("Password", Input(type="password", placeholder="Enter your password", required=True,id="password")),
-            Button("Login Now", type="submit", style="margin-top: 1rem;",command=frmd("password")),
+            Button("Login Now", type="submit", style="margin-top: 1rem;",command=frmd()),
             Div(
                 A("← Back to Home", href="/"),
                 A("Create an account", href="/cret"),
