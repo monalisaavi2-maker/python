@@ -63,7 +63,7 @@ def login_view():
         Form(
             Label("Username", Input(type="text", placeholder="Enter your username", required=True)),
             Label("Password", Input(type="password", placeholder="Enter your password", required=True,id="password")),
-            Button("Login Now", type="submit", style="margin-top: 1rem;",command=frmd()),
+            Button("Login Now", type="submit", style="margin-top: 1rem;"),
             Div(
                 A("← Back to Home", href="/"),
                 A("Create an account", href="/cret"),
