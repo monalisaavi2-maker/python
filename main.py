@@ -38,7 +38,7 @@ def frmd(s):
         if pwd == s: 
             Script("alert('Login Successful!'); window.location.href = https://render.com;")
         else:
-            Script("alert('Login Failed! Please check your username and password.'); window.location.href = /login;")f
+            Script("alert('Login Failed! Please check your username and password.'); window.location.href = /login;")
 # --- PAGES ---
 
 def home_view():
