@@ -97,5 +97,11 @@ def get_cret():
 def get_login():  
     return login_view()
 
+# CRITICAL: Replace 'googlee1234567890abcdef.html' with your EXACT filename from Google!
+@rt("/google77b91be9ab198c0a.html")
+def get_google_verification():
+    # This sends the raw verification string text back to Google's bot instantly
+    return "google-site-verification: google77b91be9ab198c0a.html"
+
 if __name__ == "__main__":
     serve()
