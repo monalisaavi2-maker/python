@@ -1,8 +1,6 @@
 from fasthtml.common import *
 
-# 1. Initialize FastHTML directly. 
-# FastHTML natively builds an ASGI instance. Giving it the variable name 
-# 'app' allows Vercel to auto-detect and deploy it seamlessly.
+# CRITICAL: The variable name MUST be exactly 'app'
 app, rt = fast_app(live=False)
 
 def log():
@@ -36,7 +34,7 @@ def home():
         A("Go to Login", href="/login", style="display: block; text-align: center;")
     )
 
-# 2. Define application routes
+# Assign routes
 @rt("/")
 def get_home():  
     return home()
@@ -49,6 +47,6 @@ def get_cret():
 def get_login():  
     return log()
 
-# 3. Local Execution Block (This will safely be ignored by Vercel)
+# Prevent local running tools from executing on Vercel
 if __name__ == "__main__":
     serve()
